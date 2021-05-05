@@ -1,0 +1,97 @@
+
+ @media only screen and (orientation: landscape) {
+  .itemimg { 
+    padding-top:0;
+    float: left;
+    padding: 20px;
+    height:33vh;
+  }
+
+  .itemimg_product { 
+    padding-top:0;
+    float: left;
+    padding: 20px;
+    height:50vh;
+  }  
+  .EventP{
+    overflow: hidden;
+    width: 100%;
+    height: 43vh;
+  }
+  .Map{
+    margin-top:5%;
+    width: 100%;
+    height: 300vh;
+  }
+  .MapP{
+    margin-top:5%;
+    width: 100%;
+    height: 50vh;
+  }
+  .shop{width:100%;}
+  .shop>div{padding: 10px;}
+  .left_area{width: 100%; margin: 0; padding: 0; margin-left: 15vw;}
+  .right_area{width:100%;white-space: pre-wrap; top:10%;height: 18vw; font-size: 17px;}
+  .shop_pr01{ }
+  .shop_pr02{clear: both; border-top: 1px solid;}
+  .ad{height:22vw}
+  
+  .pro_text{ margin-left:50vw;}
+  .pro_cart{ margin-top:3%; width:400px; height:500px;}
+  .pro_cart_text{ margin-top:7%; margin-left:-10%; }
+  .footer_cart{margin-left:-150px;margin-top:7px; width:102vw;}
+  .hr_cart{ margin:0; width:70%;}
+  
+}
+@media only screen and (orientation: portrait) {
+  .itemimg { 
+    float: left; padding: 10px;
+    height: 250px; width: 200px; margin-left: 20vw; margin-right:90%;
+  }
+  .itemimg_product { 
+  padding-top:0;
+  float: left;  padding: 20px;
+
+  height:300px;
+  }  
+  .EventP{
+    overflow: hidden;
+    width: 100%;
+    height: 39vh;
+  }
+  .Map{
+    margin-top:5%;
+    width: 100%;
+    height: 300vh;
+  }
+  .MapP{
+    margin-top:5%;
+    width: 100%;
+    height: 75vh;
+  }
+  .right_area{
+    white-space:pre-wrap; 
+    width:100%; top:10%; margin-left:-10vw; font-size: 3vw;
+
+  }
+   .pro{
+   width:90vw; top:10%; margin-left:2vw; margin-right:90%;
+
+  }
+  .left_area{width: 100%; margin: 0; padding: 0; margin-left: auto; float:center;}
+  .shop_pr02{clear: both; border-top: 1px solid;}
+  .ad{
+	  display: none;
+
+	}
+
+  .pro_text{margin-left:0vw;}
+  .pro_cart{margin-top:3%; width:300px; margin-left:20px;}
+  .pro_cart_text{ margin-top:7%; font-size:4vw; }
+  .hr_cart{ margin:0; width:100%;}
+  .footer_cart{margin-left:-4vw;width:96.5vw;}
+  
+}
+A:link {text-decoration:none; color:black;} 
+A:visited {text-decoration:none; color:black;}
+A:hover {text-decoration:none; color:#5f5f60;}
