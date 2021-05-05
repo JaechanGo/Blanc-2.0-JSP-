@@ -1,0 +1,73 @@
+@charset "UTF-8";
+ @media only screen and (orientation: landscape) {
+.itemimg2 { float: left; right: 5vw; padding: 10px; height:40vw; width: 35%;  margin-left: 7vw;}
+.state{
+  font-family:  Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 4vw;
+  text-decoration: underline;
+  width: 100%;
+}
+.state2{
+    margin-left: 2vw;
+    font-size: 1.5vw;
+    line-height: 155%;
+}
+.state3{
+	font-size: 1.6vw; 
+	line-height: 1.5;
+}
+.state4{
+	font-size:1vw;
+	line-height: 2;
+}
+
+.cd-project-infoM{
+  height: 70%;
+}
+.EventP{
+  width: 100%;
+  height: 40vh;
+}
+}
+  
+  @media only screen and (max-width : 800px) {
+    .itemimg2 { height:30vh; width: 100%; margin-left: 0.2vw; margin-bottom: 10px;}
+    .state{
+      
+      margin-left: 5vw;
+      font-size: 17px;
+      text-decoration: underline;
+    }
+    .state2{
+      margin-left: 5vw;
+      font-size: 12px;
+      line-height: 155%;
+    }
+    .state3{
+	font-size: 4vw; 
+	line-height: 1.5;
+	}
+	.state4{
+	font-size:3vw;
+	line-height: 2;
+	}
+    .cd-project-infoM{
+      height: 85%;
+    }
+    .EventP{
+      width: 100%;
+      height: 120vh;
+    }
+    .map_canvas{
+    float: left; padding: 10px;
+    height:3vh;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+  .map_canvas{
+    float: left; padding: 10px;
+    height:3vh;
+    margin-right: 20%;
+  }
