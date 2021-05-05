@@ -13,6 +13,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name='viewport' content="width=device-width", initial-scale="1">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="css/style.css">
@@ -44,7 +46,7 @@
 			Notice		: <%=product.getNotice()%><br>
 			Coffee		: <%=product.getCoffee()%><br>
 			Description	: <%=product.getDescription()%><br>
-			Price 		: <%=product.getUnitPrice()%>원 (<%=product.getGram()%>g)
+			Price 		:  <fmt:formatNumber value="<%=product.getUnitPrice()%>" pattern="#,###"/>원 (<%=product.getGram()%>g)
 			</div>
 		</a>
 			<div class="shop_pr02"></div>
