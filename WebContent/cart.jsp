@@ -84,7 +84,7 @@
 <%=product.getOrderQnt() %> 개<br>
 
 <p><a href="add.jsp" class="btn btn-secondary"><button class="btn btn-info" style="background-color:#666666; border-color:#666666; margin-left:-10px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;구매하기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            &raquo;</button></a> 
-<p><a href="JSP_05bucket4list2.jsp" ><button class="btn btn-info" style=" margin-left:2px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장바구니 확인 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &raquo;</button></a><a	href="item.jsp" class="btn btn-secondary"><button class="btn btn-info" style=" margin-left:-5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 상품 목록 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &raquo;</button></a><input type="text" value="" name="goodsCode" style="display:none;'"/></form>
+<p><a href="cart_list.jsp" ><button class="btn btn-info" style=" margin-left:2px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장바구니 확인 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &raquo;</button></a><a	href="item.jsp" class="btn btn-secondary"><button class="btn btn-info" style=" margin-left:-5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 상품 목록 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &raquo;</button></a><input type="text" value="" name="goodsCode" style="display:none;'"/></form>
 			</div>
 				</div>
 		</div>
