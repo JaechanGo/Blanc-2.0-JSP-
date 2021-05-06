@@ -18,8 +18,9 @@
 
 <style>
 .main_active{
-  color: #555;
-  background-color: #e7e7e7;
+  font-weight:bold;
+  font-size:20px;
+  text-decoration: underline;
 }
 </style>
 <title>BLANC. </title>
@@ -52,13 +53,13 @@
 			</ol>
 			<div class="carousel-inner"> <!-- .carousel-inner > .item > a > img -->
 				<div class="item active" style="background-color: #fff;">
-					<img class="main_item" src="images/item1.jpg" href="item.jsp" role="button" >
+					<a href="product.jsp?id=No.1"><img class="main_item" src="images/item1.jpg" ></a>
 				</div>
 				<div class="item">
-					<img class="main_item" src="images/item2.jpg">
+					<a href="product.jsp?id=No.2"><img class="main_item" src="images/item2.jpg"></a>
 				</div>
 				<div class="item">
-					<img class="main_item" src="images/item3.jpg">
+					<a href="product.jsp?id=No.3"><img class="main_item" src="images/item3.jpg"></a>
 				</div>
 			</div>
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
