@@ -16,14 +16,15 @@
 <link rel="stylesheet" href="css/custom.css">
 <title>BLANC. </title>
 <style type = "text/css">
-	a, a:hover{
-		color : #000000;
-		text-decoration;
-	}
-	.bbs_active{
-  		color: #555;
-  		background-color: #e7e7e7;
-  	}
+a, a:hover{
+	color : #000000;
+	text-decoration;
+}
+.bbs_active{
+	font-weight:bold;
+	font-size:20px;
+	text-decoration: underline;
+}
 </style>
 </head>
 <body>
