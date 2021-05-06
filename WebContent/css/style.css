@@ -101,7 +101,7 @@
   .cart { border-top:1px solid black; border-bottom:1px solid black; text-align:center;padding:10px; font-size:10px; }
   .cart_table{margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto;border-left:0px; font-size:10px;width:60%;}
   .cart_qnt{width:100px;}  
-  
+  .nav_style{}
 }
 A:link {text-decoration:none; color:black;} 
 A:visited {text-decoration:none; color:black;}
