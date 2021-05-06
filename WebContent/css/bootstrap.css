@@ -4508,9 +4508,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
 }
+/*네비 구현부*/
 .navbar-default {
-  background-color: #ffffff;
-  border-color: #ffffff;
+
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4530,11 +4530,14 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > li > a:focus {
   color: #333;
   background-color: transparent;
+  font-weight:bold;
 }
+
+/* */
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555;
+ color: #555;
 
 }
 .navbar-default .navbar-nav > .disabled > a,
@@ -4544,7 +4547,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
-  border-color:#ffffff;
+  border-color: #ddd;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
@@ -4561,16 +4564,19 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #555;
+  font-weight:bold;
   background-color: #e7e7e7;
 }
+
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #777;
+
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #333;
     background-color: transparent;
+    font-weight:bold;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
@@ -6810,5 +6816,16 @@ table {
 
 body {
   font-family: "PT Sans", sans-serif;
+}
+
+@media only screen and (orientation: landscape) {
+	.navbar-center{
+	margin-left:25%;
+	}
+}
+@media only screen and (orientation: portrait) {
+	.navbar-center{
+	margin-left:-15px;
+	}
 }
 /*# sourceMappingURL=bootstrap.css.map */
