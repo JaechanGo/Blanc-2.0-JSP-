@@ -12,9 +12,10 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <title>JSP 게시판 웹 사이트 </title>
 <style>
-.product_active{
-  color: #555;
-  background-color: #e7e7e7;
+.bbs_active{
+	font-weight:bold;
+	font-size:20px;
+	text-decoration: underline;
 }
 </style>
 </head>
