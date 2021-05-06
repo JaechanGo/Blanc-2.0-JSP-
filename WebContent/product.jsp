@@ -34,8 +34,9 @@
 
 <style>
 .product_active{
-  color: #555;
-  background-color: #e7e7e7;
+  font-weight:bold;
+  font-size:20px;
+  text-decoration: underline;
 }
 </style>
 </head>
@@ -154,7 +155,7 @@ function change () {
 							<li data-target="#myCarousel" data-slide-to="2"></li>
 						</ol>
 			<div class="carousel-inner ad" style=" width:500px;"> <!-- .carousel-inner > .item > a > img -->
-				<div class="item active" style="background-color: #fff;">
+				<div class="item active">
 					<img class="main_item"src="images/item1.jpg" style="height:180px; width:150px; margin-top:40px;" >
 				</div>
 				<div class="item">
