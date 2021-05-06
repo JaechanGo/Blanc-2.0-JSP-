@@ -60,6 +60,13 @@
 <head>
 <title>cart add</title>
 </head>
+<style>
+.product_active{
+  font-weight:bold;
+  font-size:20px;
+  text-decoration: underline;
+}
+</style>
 <body>
 	<%@ include file="menu.jsp"%>
 	<%
