@@ -20,8 +20,9 @@
 <link rel="stylesheet" href="css/style.css">
 <style>
 .product_active{
-  color: #555;
-  background-color: #e7e7e7;
+  font-weight:bold;
+  font-size:20px;
+  text-decoration: underline;
 }
 </style>
 <title>BLANC. </title>
