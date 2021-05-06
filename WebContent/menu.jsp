@@ -37,10 +37,10 @@
 				<span class = "icon-bar"></span>
 				<span class = "icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">&nbsp;&nbsp;&nbsp;B&nbsp;L&nbsp;A&nbsp;N&nbsp;C&nbsp;.&nbsp;&nbsp;&nbsp;</a>
+			<a class="navbar-brand" href="main.jsp"><img src="images/logo.png" style="width:120px; margin:-13px 0px 0px -5px;"></a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
+			<ul class="nav navbar-nav navbar-center">
 				<li class = "active main_active"><a href="main.jsp">Main</a></li>
 				<li class = "active bbs_active"><a href="bbs.jsp">CONTACT</a></li>
 				<li class = "active product_active"><a href="item.jsp">SHOP</a></li>
@@ -77,7 +77,7 @@
 						<li><a href="#"><%=list.getUserName() %> </a></li>
 						<li><a href="#"><%= userID %> </a></li>
 						<hr style="margin:2px">
-						<li><a href="JSP_05bucket4list2.jsp"> 장바구니 </a></li>
+						<li><a href="cart_list.jsp"> 장바구니 </a></li>
 						<li><a href="mybbs.jsp">내 문의내역 </a></li>
 						<li><a href="logoutAction.jsp">로그아웃</a></li>
 					</ul>
