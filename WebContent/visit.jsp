@@ -47,8 +47,9 @@ p {
 	margin-top: 10px;
 }
 .visit_active{
-	color: #555;
-	background-color: #e7e7e7;
+	font-weight:bold;
+	font-size:20px;
+	text-decoration: underline;
 }
 </style>
 
