@@ -43,9 +43,16 @@
   .hr_cart{ margin:0; width:70%;}
   
   .cart_td{height:90px; text-align:middle; vertical-align:middle;}
+  .cart_delivery_td{ height:50px;}
+  
   .cart { border-top:1px solid black; border-bottom:1px solid black; text-align:center;padding:10px;}
-  .cart_table{margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto;border-left:0px;border-left:none;border-right:none;width:80%; }
+  .cart_delivery{ border:1px solid black; border-bottom:1px solid black;padding:15px;border-left:none;border-right:none;}
+  
+  .cart_table{margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto;border-left:none;border-right:none;width:80%; }
+  .cart_delivery_table{margin-left:auto; margin-right:auto; margin-top:auto; margin-bottom:auto;border-left:none;border-right:none;width:80%; }
   .cart_qnt{width:200px;}
+
+  .cart_delivery_index{ padding-left:15px; width:15%;}
   
   
 }
