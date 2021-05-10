@@ -134,6 +134,30 @@
   opacity: 0;
   background: #fff;
 }
+
+ .needpopup_local {
+  position: relative;
+  z-index: 9999;
+  top: 50%;
+  left: 25%;
+
+  display: none;
+
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height:47vw;
+  width: 100%;
+  max-width: 50%;
+  margin-left: 0px;
+  padding: 30px;
+
+  -webkit-transform: scale(.1, .1);
+      -ms-transform: scale(.1, .1);
+          transform: scale(.1, .1);
+
+  opacity: 0;
+  background: #fff;
+}
  
  
 }
