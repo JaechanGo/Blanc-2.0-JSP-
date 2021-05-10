@@ -127,24 +127,24 @@ function change () {
 			</div>		
 	<div class="container">
 		<div class="row">
-		<div class="right_area pro_text">
-			<div class="col-md-6 ">
+			<div class="right_area pro_text">
+				<div class="col-md-6 ">
 			
 				
-				<p><span class="badge badge-danger"> <%=product.getProductId()%></span>
-				<p><h3>상품명 : <%=product.getPname()%> <%=product.getGram()%>g</h3>
-				<p><%=product.getDescription()%>
-				<p>제조사 : <%=product.getNotice()%>
-				<p>분류 : <%=product.getCoffee()%>
-				<h4><fmt:formatNumber value="<%=product.getUnitPrice()%>" pattern="#,###"/>원</h4>
-				
-						<form name="form" method="post" action="cart.jsp?id=<%=product.getProductId()%>">
-						<p>수량 : <input type="text" name="amount" value="1" size="3" onchange="change();">&nbsp;&nbsp;<input type="button" value=" + " onclick="add();"> &nbsp; <input type="button" value=" - " onclick="del();"><input type="hidden" name="sell_price" value="<%=product.getUnitPrice()%>" style="display:none">
-						<p>금액 : <input type="text" name="sum" size="11" readonly >원
-						
-				<p><button class="btn btn-info" onclick="cartAdd('<%=product.getProductId()%>','<%=product.getPname()%>')">장바구니 &raquo;</button><input type="text" value="" name="goodsCode" style="display:none;'"/> <a	href="add.jsp" class="btn btn-secondary"> 구매하기 &raquo;</a> <a	href="item.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a></form>
-			</div>
+					<p><span class="badge badge-danger"> <%=product.getProductId()%></span>
+					<p><h3>상품명 : <%=product.getPname()%> <%=product.getGram()%>g</h3>
+					<p><%=product.getDescription()%>
+					<p>제조사 : <%=product.getNotice()%>
+					<p>분류 : <%=product.getCoffee()%>
+					<h4><fmt:formatNumber value="<%=product.getUnitPrice()%>" pattern="#,###"/>원</h4>
+					
+							<form name="form" method="post" action="cart.jsp?id=<%=product.getProductId()%>">
+							<p>수량 : <input type="text" name="amount" value="1" size="3" onchange="change();">&nbsp;&nbsp;<input type="button" value=" + " onclick="add();"> &nbsp; <input type="button" value=" - " onclick="del();"><input type="hidden" name="sell_price" value="<%=product.getUnitPrice()%>" style="display:none">
+							<p>금액 : <input type="text" name="sum" size="11" readonly >원
+							
+					<p><button class="btn btn-info" onclick="cartAdd('<%=product.getProductId()%>','<%=product.getPname()%>')">장바구니 &raquo;</button><input type="text" value="" name="goodsCode" style="display:none;'"/> <a	href="add.jsp" class="btn btn-secondary"> 구매하기 &raquo;</a> <a	href="item.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a></form>
 				</div>
+			</div>
 		</div>
 			
 		<br><br>
@@ -154,27 +154,25 @@ function change () {
 							<li data-target="#myCarousel" data-slide-to="1"></li>
 							<li data-target="#myCarousel" data-slide-to="2"></li>
 						</ol>
-			<div class="carousel-inner ad" style=" width:500px;"> <!-- .carousel-inner > .item > a > img -->
-				<div class="item active">
-					<img class="main_item"src="images/item1.jpg" style="height:180px; width:150px; margin-top:40px;" >
-				</div>
-				<div class="item">
-					<img class="main_item" src="images/item2.jpg" style="height:180px; width:150px; margin-top:40px;" >
-				</div>
-				<div class="item">
-					<img class="main_item" src="images/item3.jpg" style="height:180px; width:150px; margin-top:40px;" >
-				</div>
-			</div>
-			<a class="left carousel-control ad" href="#myCarousel" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</a>
-			<a class="right carousel-control ad" href="#myCarousel" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			</a>			
-		</div>
-						<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-						<script src="js/bootstrap.js"></script>
-					</div>	
+						<div class="carousel-inner ad" style=" width:500px;"> <!-- .carousel-inner > .item > a > img -->
+							<div class="item active">
+								<a href="./product.jsp?id=<%=product.getProductId()%>"><img class="main_item"src="images/item1.jpg" style="height:180px; width:150px; margin-top:40px;" ></a>
+							</div>
+							<div class="item">
+								<img class="main_item" src="images/item2.jpg" style="height:180px; width:150px; margin-top:40px;" >
+							</div>
+							<div class="item">
+								<img class="main_item" src="images/item3.jpg" style="height:180px; width:150px; margin-top:40px;" >
+							</div>
+						</div>
+						<a class="left carousel-control ad" href="#myCarousel" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control ad" href="#myCarousel" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>			
+					</div>
+	</div>	
 		
 <div class="footer" style="height:60px;">
 	<%@ include file="footer.jsp"%>
