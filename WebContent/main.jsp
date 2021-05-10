@@ -69,8 +69,6 @@
 				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>			
 		</div>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
 	<div class="footer">
 	<%@ include file="footer.jsp"%>
 	</div>
