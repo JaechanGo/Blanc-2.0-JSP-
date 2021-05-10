@@ -88,5 +88,9 @@
 			%>
 		</div>
 	</nav>
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/needpopup.min.js"></script>
 </body>
 </html>
