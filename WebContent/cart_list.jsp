@@ -78,6 +78,10 @@ p {
             window.alert("주소를 입력하세요.");
             return false;
         }
+        if (document.getElementById("Address2").value == "") {
+            window.alert("상세주소를 입력하세요.");
+            return false;
+        }
         if (document.getElementById("Phone2").value == "") {
             window.alert("휴대폰 번호를 선택하시요.");
             return false;
@@ -151,8 +155,51 @@ p {
 	UserDAO userDAO = new UserDAO();
 	User list = userDAO.getUserDATA(userID);
 %>
+<br><br>
 <table class="cart_delivery cart_delivery_table">
 <tr><td style="height:15px; border-top:1px solid white;"></td></tr>
+		<tr>
+		<td><a style="font-size:20px;">주문자 정보</a><hr></td>
+		<td> &nbsp;<hr></td>
+		<td> &nbsp;<hr></td>
+		<td> &nbsp;<hr></td>
+		</tr>
+		<tr>
+			<td class="cart_delivery_index">성함 <a style="color:red;">*</a></td>
+			<td class="cart_delivery_td "><input type="text" id="Name" size="40" value="<%=list.getUserName() %>" placeholder="<%=list.getUserName() %>"></td>
+			<td class="cart_delivery_td cart_delivery_index"></td>		
+			<td class="cart_delivery_td cart_delivery_index"></td>
+
+		</tr>
+		<tr>
+			<td class="cart_delivery_index">이메일 <a style="color:red;">*</a></td>
+			<td class="cart_delivery_td"> <input type="text" id="Email" size="40" value="<%=list.getUserEmail() %>" placeholder="<%=list.getUserEmail() %>">  </td>
+			<td class="cart_delivery_td cart_delivery_index"></td>		
+			<td class="cart_delivery_td cart_delivery_index"></td>
+
+		</tr>
+				<tr>		
+			<td class="cart_delivery_index">연락처 <a style="color:red;">*</a></td>
+			<td class="cart_delivery_td">
+			<select id="Phone1">
+			    <option value="">  선택  </option>
+			    <option value="010">010</option>
+			    <option value="011">011</option>
+			    <option value="016">016</option>
+			    <option value="017">017</option>
+			    <option value="019">019</option>
+			</select>
+			<input type="tel" name="Phone2" size="4" maxlength="4" max="9999" id="Phone2" placeholder="1234" onkeypress="onlyNumber();"> - <input type="tel" name="Phone3" size="4" id="Phone3" maxlength="4" placeholder="5678" onkeypress="onlyNumber();"> </td>
+   			<td class="cart_delivery_td"></td>
+   			<td></td>
+   		</tr>
+   		<tr><td><br></td></tr>
+   		<tr>
+		<td><a style="font-size:20px;">배송지 정보</a><hr></td>
+		<td> &nbsp;<hr></td>
+		<td> &nbsp;<hr></td>
+		<td> &nbsp;<hr></td>
+		</tr>
 		<tr >
 			<td class="cart_delivery_index">성함 <a style="color:red;">*</a></td>
 			<td class="cart_delivery_td "><input type="text" id="Name" size="40" value="<%=list.getUserName() %>" placeholder="<%=list.getUserName() %>"></td>
@@ -174,7 +221,7 @@ p {
 			<td></td>
 		<tr>		
 			<td></td>
-			<td class="cart_delivery_td "> 	<input type="text" name="Address1" size="40" id="Address1" placeholder="주소"></td>
+			<td class="cart_delivery_td "> 	<input type="text" name="Address1" size="45" id="Address1" placeholder="주소"></td>
    			<td class="cart_delivery_td"> <input type="text" name="Address2" size="40" id="Address2" placeholder="상세주소"></td>
    			<td></td>
    		</tr>
@@ -183,23 +230,44 @@ p {
 			<td class="cart_delivery_td">
 			<select id="Phone1">
 			    <option value="">  선택  </option>
+			    <option value="010">010</option>
 			    <option value="011">011</option>
 			    <option value="016">016</option>
 			    <option value="017">017</option>
 			    <option value="019">019</option>
-			    <option value="010">010</option>
 			</select>
 			<input type="tel" name="Phone2" size="4" maxlength="4" max="9999" id="Phone2" placeholder="1234" onkeypress="onlyNumber();"> - <input type="tel" name="Phone3" size="4" id="Phone3" maxlength="4" placeholder="5678" onkeypress="onlyNumber();"> </td>
    			<td class="cart_delivery_td"></td>
    			<td></td>
    		</tr>
 		<tr>		
-			<td class="cart_delivery_index">배송시 요청사항</td>
-			<td class="cart_delivery_td "> 	<input type="text" name="text" size="40" id="text" placeholder="배송시 요청사항을 입력하세요"></td>
+			<td class="cart_delivery_index">배송 요청사항</td>
+			<td class="cart_delivery_td "> 	<input type="text" name="text" size="40" id="text" placeholder="배송시 요청사항을 입력하세요" value=""></td>
    			<td class="cart_delivery_td"></td>
    			<td></td>
    		</tr>
    		   				
+</table>
+
+<script type="text/javascript">
+$(function() {	
+	$("img").click(function() {
+	      $("img").css("border", "none");
+	      $(this).css("border", "3px solid blue");
+	   });
+});
+</script>
+
+<table class="cart_delivery cart_delivery_table">
+<tr><td style="height:15px; border-top:1px solid white;"></td></tr>
+	<tr>
+			<td class="cart_delivery_index">결제 <a style="color:red;">*</a></td>
+	</tr>
+	<tr>
+			<td class="cart_delivery_td "></td>
+			<td class="cart_delivery_td "><div id="palettes"><a href="javascript:;"><img src="images/card.png" class="payment"></a><img src="images/bankbook.png" class="payment"><img src="images/phone.png" class="payment"><img src="images/pay.png" class="payment"></div></td>		
+			<td class="cart_delivery_td cart_delivery_index"><br></td>
+	</tr>
 </table>
 <div style="text-align:right; margin-right:100px;">
 
