@@ -57,10 +57,14 @@ p {
 .needpopup p + p {
 	margin-top: 10px;
 }
+.layer1 { display:none;}
+.layer2 { display:none;}  
+.layer3 { display:none;}
+.layer4 { display:none;}
 }
 </style>
+<!-- 입력란 빈공간일 경우 오류메시지 팝업창 띄움 -->
 <script language="javascript" type="text/javascript" >
-
     function onlyNumber() {
         if ((event.keyCode < 48) || (event.keyCode > 57))
             event.returnValue = false;
@@ -82,7 +86,7 @@ p {
             window.alert("상세주소를 입력하세요.");
             return false;
         }
-        if (document.getElementById("Phone2").value == "") {
+        if (document.getElementById("Phone1").value == "") {
             window.alert("휴대폰 번호를 선택하시요.");
             return false;
         }
@@ -92,9 +96,66 @@ p {
         }
         if (document.getElementById("Phone3").value.length != 4) {
             window.alert("가운데 번호는 4자리로 입력하세요");
+            return false;
         }
+        if (document.getElementById("pay").value === undefined) {
+            window.alert("결제 방법을 선택하세요");
+            return false;
+        }
+        return true;
+        
+
     }
 
+</script>
+<!-- 결제 선택시 border 변경 -->
+<script type="text/javascript">
+$(function() {	
+	$("img").click(function() {
+	      $("img").css("border", "none");
+	      $(this).css("border", "3px solid blue");
+	   });
+});
+</script>
+<!-- 결제 선택시 레이어 변경 -->
+<script type="text/javascript">
+//<!--
+    function viewDiv(idx)
+    {
+        if(idx == 1)
+        {
+            $(".layer1").css("display","block");
+            $(".layer2").css("display","none");
+            $(".layer3").css("display","none");
+            $(".layer4").css("display","none");
+            document.getElementById("pay").value="card";
+        }
+        else if(idx == 2)
+        {
+            $(".layer1").css("display","none");
+            $(".layer2").css("display","block");
+            $(".layer3").css("display","none");
+            $(".layer4").css("display","none");
+            document.getElementById("pay").value="bankbook";
+        }
+        else if(idx == 3)
+        {
+            $(".layer1").css("display","none");
+            $(".layer2").css("display","none");
+            $(".layer3").css("display","block");
+            $(".layer4").css("display","none");
+            document.getElementById("pay").value="phone";
+        }
+        else if(idx == 4)
+        {
+            $(".layer1").css("display","none");
+            $(".layer2").css("display","none");
+            $(".layer3").css("display","none");
+            $(".layer4").css("display","block");
+            document.getElementById("pay").value="pay";
+        }
+    }
+//-->
 </script>
 <body>
 <%@ include file="menu.jsp" %>
@@ -147,7 +208,7 @@ p {
 	<td class="cart_td cart" style="text-align:center;"> - </td>
 	<td class="cart_td cart" style="text-align:left;"><dl><dt style="margin-left:3px;">할인금액</dt><dt style="color:red;font-size:19px;">3,000원</dt></dl></td>
 	<td class="cart_td cart" style="text-align:right; font-size:40px;"> = </td>
-	<td class="cart_td cart" style="text-align:center; font-size:25px;">총 가격 : <fmt:formatNumber value="<%= sumPrice+2500 %>" pattern="#,###"/>원  </td>
+	<td class="cart_td cart" style="text-align:center; font-size:25px;">총 가격 : <fmt:formatNumber value="<%= sumPrice+2500-3000 %>" pattern="#,###"/>원  </td>
 </tr>
 </table>
 <br>
@@ -156,6 +217,10 @@ p {
 	User list = userDAO.getUserDATA(userID);
 %>
 <br><br>
+
+<form action="paymentAction.jsp" method="post" onsubmit="return CheckForm();">
+
+
 <table class="cart_delivery cart_delivery_table">
 <tr><td style="height:15px; border-top:1px solid white;"></td></tr>
 		<tr>
@@ -206,14 +271,7 @@ p {
 			<td class="cart_delivery_td cart_delivery_index"></td>		
 			<td class="cart_delivery_td cart_delivery_index"></td>
 
-		</tr>
-		<tr>
-			<td class="cart_delivery_index">이메일 <a style="color:red;">*</a></td>
-			<td class="cart_delivery_td"> <input type="text" id="Email" size="40" value="<%=list.getUserEmail() %>" placeholder="<%=list.getUserEmail() %>">  </td>
-			<td class="cart_delivery_td cart_delivery_index"></td>		
-			<td class="cart_delivery_td cart_delivery_index"></td>
-
-		</tr>		
+		</tr>	
 		<tr>
 			<td class="cart_delivery_index">배송지 <a style="color:red;">*</a></td>
 			<td class="cart_delivery_td">  <input type="text" name="zipcode" size="8" id="postcode" placeholder="우편번호"> <input type="button" class="btn btn-primary btn-sm" value="우편번호찾기" onclick="execDaumPostcode()">
@@ -248,16 +306,6 @@ p {
    		</tr>
    		   				
 </table>
-
-<script type="text/javascript">
-$(function() {	
-	$("img").click(function() {
-	      $("img").css("border", "none");
-	      $(this).css("border", "3px solid blue");
-	   });
-});
-</script>
-
 <table class="cart_delivery cart_delivery_table">
 <tr><td style="height:15px; border-top:1px solid white;"></td></tr>
 	<tr>
@@ -265,15 +313,81 @@ $(function() {
 	</tr>
 	<tr>
 			<td class="cart_delivery_td "></td>
-			<td class="cart_delivery_td "><div id="palettes"><a href="javascript:;"><img src="images/card.png" class="payment"></a><img src="images/bankbook.png" class="payment"><img src="images/phone.png" class="payment"><img src="images/pay.png" class="payment"></div></td>		
+			<td class="cart_delivery_td ">
+			<div id="pay" VALUE="">
+			<button class="payment" name="pay" TYPE="button" VALUE="card" OnClick="viewDiv(1)"> <img src="images/card.png" class="payment"> </button>
+			<button class="payment" name="pay" TYPE="button" VALUE="bankbook"  OnClick="viewDiv(2)"><img src="images/bankbook.png" class="payment"> </button>
+			<button class="payment" name="pay" TYPE="button" VALUE="phone"  OnClick="viewDiv(3)"><img src="images/phone.png" class="payment"> </button>
+			<button class="payment" name="pay" TYPE="button" VALUE="pay"  OnClick="viewDiv(4)"><img src="images/pay.png" class="payment"> </button>
+			</div>			
+			</td>		
 			<td class="cart_delivery_td cart_delivery_index"><br></td>
+	</tr>
+	<tr>
+		<td>
+			<div class='layer1'>신용카드 <a style="color:red;">*</a></div>
+			<div class='layer2'>무통장 입금 <a style="color:red;">*</a></div>
+			<div class='layer3'>핸드폰 결제 <a style="color:red;">*</a></div>
+			<div class='layer4'>PAYCO <a style="color:red;">*</a></div>
+		</td>
+		<td>
+			<div class='layer1'>
+			카드사 : 
+			<select id="pay_card">
+			    <option value="">  선택  </option>
+			    <option value="hana">하나카드</option>
+			    <option value="shinhan">신한카드</option>
+			    <option value="kb">국민카드</option>
+			    <option value="bc">비씨카드</option>
+			    <option value="nh">농협카드</option>
+			</select><br><br>
+			<input type="text" name="cardnum1" size="4" id="cardnum1" maxlength="4" onkeypress="onlyNumber();">-
+			<input type="text" name="cardnum2" size="4" id="cardnum2" maxlength="4" onkeypress="onlyNumber();">-
+			<input type="text" name="cardnum3" size="4" id="cardnum3" maxlength="4" onkeypress="onlyNumber();">-
+			<input type="text" name="cardnum4" size="4" id="cardnum4" maxlength="4" onkeypress="onlyNumber();">
+			</div>
+			<div class='layer2'>
+			은행명 : 
+			<select id="pay_bank">
+			    <option value="">  선택  </option>
+			    <option value="hana">하나은행</option>
+			    <option value="shinhan">신한은행</option>
+			    <option value="kb">국민은행</option>
+			    <option value="nh">농협은행</option>
+			    <option value="ibk">IBK은행</option>
+			</select><br><br>
+			</div>
+			<div class='layer3'>
+			<select id="pay_tel1">
+			    <option value="">  선택  </option>
+			    <option value="010">010</option>
+			    <option value="011">011</option>
+			    <option value="016">016</option>
+			    <option value="017">017</option>
+			    <option value="019">019</option>
+			</select>
+			<input type="tel" name="pay_tel2" size="4" maxlength="4" max="9999" id="pay_tel2" placeholder="1234" onkeypress="onlyNumber();"> - <input type="tel" name="pay_tel3" size="4" id="pay_tel3" maxlength="4" placeholder="5678" onkeypress="onlyNumber();"></div>
+			<div class='layer4'>
+			페이 결제
+				<select id="pay_pay">
+			    <option value="">  선택  </option>
+			    <option value="hana">카카오페이</option>
+			    <option value="shinhan">삼성페이</option>
+			    <option value="kb">PAYCO</option>
+			</select><br><br>
+			</div>
+			<br>
+		</td>
+		<td></td>
+		<td></td>
 	</tr>
 </table>
 <div style="text-align:right; margin-right:100px;">
-
-<input type="button" value="가입" onclick="CheckForm();" />
-<p><button class="btn btn-info" onclick="CheckForm();">구매하기 &raquo;</button> <a	href="item.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
+<p>
+<br>
+<button type="submit" class="btn btn-info" >구매하기 &raquo;</button><a	href="item.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
 </div>
+</form>
 <br>
 </body>
 <%@ include file="footer.jsp"%>
