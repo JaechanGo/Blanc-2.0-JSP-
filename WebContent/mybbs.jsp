@@ -16,10 +16,15 @@
 <link rel="stylesheet" href="css/custom.css">
 <title>BLANC. </title>
 <style type = "text/css">
-	a, a:hover{
-		color : #000000;
-		text-decoration;
-	}
+a, a:hover{
+	color : #000000;
+	text-decoration;
+}
+.bbs_active{
+font-weight:bold;
+font-size:20px;
+text-decoration: underline;
+}
 </style>
 </head>
 <body>
@@ -58,9 +63,6 @@
 			<a href = "write.jsp" class='btn btn-primary pull-right'>글쓰기</a>
 		</div>
 	</div>
-	
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
 	<br><br><br><br>
 <div class="footer">
 	<%@ include file="footer.jsp"%>
