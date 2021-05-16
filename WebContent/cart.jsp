@@ -7,6 +7,7 @@
 <%@ page import="user.User" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product"%>
+<%@page import="java.sql.*"%>
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
 <%@ page import="cart.*" %>         
 <%@ page import="java.util.*" %>    
@@ -68,6 +69,8 @@
 }
 </style>
 <body>
+
+
 	<%@ include file="menu.jsp"%>
 	<%
 	UserDAO userDAO = new UserDAO();
@@ -95,6 +98,18 @@
 			</div>
 				</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+	
+
 </body>
 	<div class="footer footer_cart">
 	<%@ include file="footer.jsp"%>
