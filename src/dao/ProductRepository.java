@@ -2,7 +2,6 @@ package dao;
 
 import java.util.ArrayList;
 
-import cart.Goods;
 import dto.Product;
 
 public class ProductRepository {
