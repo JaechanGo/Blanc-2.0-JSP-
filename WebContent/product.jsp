@@ -27,8 +27,6 @@
 		document.form.goodsCode.value = goodsCode;	// 버튼 선택되면 텍스트필드에 출력
 		document.form.submit;	// 장바구니 목록으로 전송
 		alert(PoductName+'추가');	// 어떤것이 전송되는지 출력
-		
-		
 	}
 </script>
 
