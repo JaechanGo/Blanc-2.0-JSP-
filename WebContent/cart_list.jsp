@@ -5,6 +5,7 @@
 <%@ page import="bbs.Bbs" %>
 <%@ page import="user.UserDAO" %>
 <%@ page import="user.User" %>
+<%@page import="java.sql.*"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product"%>
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
@@ -175,11 +176,47 @@ p {
 </script>
 <body>
 <%@ include file="menu.jsp" %>
+<%
+		request.setCharacterEncoding("UTF-8");
+
+		// 파라미터 정보 가져오기
+
+
+		/* userID varchar(20),
+		userEmail varchar(100),
+		userPhone varchar(15),
+		itemuser_ID varchar(20),
+		itemAdress varchar(70),
+		itemPhone varchar(15),
+		itemMessage varchar(40),
+		pay varchar(10) */
+
+
+		// JDBC 참조 변수 준비
+		Connection con = null; 
+		PreparedStatement pstmt = null; 
+		String url = "jdbc:mysql://localhost:3306/BBS";
+		String user = "root", pw = "root";
+
+		// 1) JDBC 드라이버 로딩
+		Class.forName("com.mysql.jdbc.Driver");
+
+		// 2) DB연결(DB url, DB id, DB pw)
+		con = DriverManager.getConnection(url, user, pw);
+		
+		String sqldelcart = "DELETE FROM cart WHERE userID = (?)";
+		pstmt = con.prepareStatement(sqldelcart);
+		pstmt.setString(1, userID);
+		pstmt.executeUpdate();
+		
+		
+%>
 <img src="images/logo.png" style="width:30%; margin:5% 0% 5% 35% ;">
 
-<%! 
+<% 
 	int [] sum ={0,0,0}; //상품 총가격 
 	int sumPrice=0;
+	char [] productName={};
 %>
 	<table class="cart cart_table" id="product"
 		style="border-left: none; border-right: none;">
@@ -193,14 +230,19 @@ p {
 		// 리스트값이 하나도 없으면 상품없다고 리턴
 		ArrayList<Product> cartList = (ArrayList<Product>) session.getAttribute("cartlist");
 		if (cartList == null) {
-			out.println("선택한 상품이 없습니다.!!!");
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('선택한 상품이 없습니다.!!!')");
+			script.println("history.back()");
+			script.println("</script>");
 		} else
 			for (int i = 0; i < cartList.size(); i++) { // 상품리스트 하나씩 출력하기
 				Product product = cartList.get(i);
 				sum[i] = product.getUnitPrice() * product.getOrderQnt(); //총금액 증가 
 				sumPrice = sum[0] + sum[1] + sum[2];
+				
 		%>
-
+		<!-- 상품 -->
 
 
 		<tr>
@@ -222,8 +264,46 @@ p {
 
 		</tr>
 
-
+		<!-- 장바구니 데이터베이스 추가 -->
 		<%
+		request.setCharacterEncoding("UTF-8");
+
+		// 파라미터 정보 가져오기
+
+
+		/* userID varchar(20),
+		userEmail varchar(100),
+		userPhone varchar(15),
+		itemuser_ID varchar(20),
+		itemAdress varchar(70),
+		itemPhone varchar(15),
+		itemMessage varchar(40),
+		pay varchar(10) */
+
+
+		// JDBC 참조 변수 준비
+
+		// 1) JDBC 드라이버 로딩
+		Class.forName("com.mysql.jdbc.Driver");
+
+		// 2) DB연결(DB url, DB id, DB pw)
+		con = DriverManager.getConnection(url, user, pw);		
+		
+		
+		String sql = "INSERT INTO cart VALUES (?, ?, ?, ?, ?)";
+		
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, userID);
+		pstmt.setString(2, product.getProductId());
+		pstmt.setString(3, product.getPname());
+		pstmt.setInt(4, product.getOrderQnt());
+		pstmt.setInt(5, product.getUnitPrice() * product.getOrderQnt());
+
+
+		pstmt.executeUpdate();
+
+		pstmt.close();
+		con.close();
 		}
 		%>
 	</table>
@@ -273,7 +353,7 @@ p {
 			</tr>
 			<tr>
 				<td><a style="font-size: 20px;">주문자 정보</a>
-				<hr></td>
+					<hr></td>
 				<td>&nbsp;
 					<hr>
 				</td>
@@ -288,7 +368,9 @@ p {
 				<td class="cart_delivery_index">성함 <a style="color: red;">*</a></td>
 				<td class="cart_delivery_td "><input type="text" name='Name'
 					id="Name" size="40" value="<%=list.getUserName()%>"
-					placeholder="<%=list.getUserName()%>"></td>
+					placeholder="<%=list.getUserName()%>">
+					<input type="hidden" name="userID" value="<%=list.getUserID()%>" style="display:none">
+					</td>
 				<td class="cart_delivery_td cart_delivery_index"></td>
 				<td class="cart_delivery_td cart_delivery_index"></td>
 
@@ -324,7 +406,7 @@ p {
 			</tr>
 			<tr>
 				<td><a style="font-size: 20px;">배송지 정보</a>
-				<hr></td>
+					<hr></td>
 				<td>&nbsp;
 					<hr>
 				</td>
@@ -398,7 +480,7 @@ p {
 			<tr>
 				<td class="cart_delivery_td "></td>
 				<td class="cart_delivery_td ">
-					<div class="pay" VALUE="hello">
+					<div class="pay" VALUE="">
 						<label> <input class="payment" id="pay" name="pay"
 							TYPE="radio" VALUE="card" OnClick="viewDiv(1)"
 							style="width: 20px; visibility: hidden;"><img
@@ -441,8 +523,7 @@ p {
 							<option value="kb">국민카드</option>
 							<option value="bc">비씨카드</option>
 							<option value="nh">농협카드</option>
-						</select><br>
-						<br> <input type="text" name="cardnum1" size="4"
+						</select><br> <br> <input type="text" name="cardnum1" size="4"
 							id="cardnum1" maxlength="4" onkeypress="onlyNumber();">-
 						<input type="text" name="cardnum2" size="4" id="cardnum2"
 							maxlength="4" onkeypress="onlyNumber();">- <input
@@ -459,8 +540,7 @@ p {
 							<option value="kb">국민은행</option>
 							<option value="nh">농협은행</option>
 							<option value="ibk">IBK은행</option>
-						</select><br>
-						<br>
+						</select><br> <br>
 					</div>
 					<div class='layer3'>
 						<select id="pay_tel1">
@@ -482,8 +562,7 @@ p {
 							<option value="hana">카카오페이</option>
 							<option value="shinhan">삼성페이</option>
 							<option value="kb">PAYCO</option>
-						</select><br>
-						<br>
+						</select><br> <br>
 					</div> <br>
 				</td>
 				<td></td>
