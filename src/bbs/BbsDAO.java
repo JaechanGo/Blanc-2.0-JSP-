@@ -93,7 +93,7 @@ public class BbsDAO {
 		 return list;
 	}
 	
-	public ArrayList<Bbs> getlistMy(String UserID){//게시물 제한
+	public ArrayList<Bbs> getlistMy(String UserID){//내 게시물
 		 String SQL = " SELECT * FROM BBS where userID = ? AND bbsAvailable = 1";
 		 ArrayList<Bbs> list = new ArrayList<Bbs>();
 		 try {
