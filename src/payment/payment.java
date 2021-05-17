@@ -13,6 +13,7 @@ public class payment {
 	private String itemMessage;
 	private String date;
 	private String state;
+	private String pay;
 	
 	public Integer getId() {
 		return id;
@@ -86,7 +87,12 @@ public class payment {
 	public void setState(String state) {
 		this.state = state;
 	}
-
+	public String getPay() {
+		return pay;
+	}
+	public void setPay(String pay) {
+		this.pay = pay;
+	}
 	
 
 }
