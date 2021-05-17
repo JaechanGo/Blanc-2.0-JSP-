@@ -74,12 +74,22 @@
 						UserDAO userDAO = new UserDAO();
 						User list = userDAO.getUserDATA(userID);
 					%>
-						<li><a><%=list.getUserName() %> </a></li>
+						<li><a><%=list.getUserName()%> </a></li>
 						<li><a><%= userID %> </a></li>
 						<hr style="margin:2px">
 						<li><a href="cart_list.jsp"> 장바구니 </a></li>
 						<li><a href="mybbs.jsp">내 문의내역 </a></li>
+						<% if ( userID.equals("happypuki")){%>
+						<li><a href="payment_bbs.jsp">배송 관리창</a></li>
+						<%
+						}else{
+						%>
+						<li><a href="payment_mybbs.jsp">결제/배송확인</a></li>	
+						<%
+						}
+						%>
 						<li><a href="logoutAction.jsp">로그아웃</a></li>
+						
 					</ul>
 				</li>
 			</ul>
