@@ -140,27 +140,24 @@ function change () {
 							<p>수량 : <input type="text" name="amount" value="1" size="3" onchange="change();">&nbsp;&nbsp;<input type="button" value=" + " onclick="add();"> &nbsp; <input type="button" value=" - " onclick="del();"><input type="hidden" name="sell_price" value="<%=product.getUnitPrice()%>" style="display:none">
 							<p>금액 : <input type="text" name="sum" size="11" readonly >원
 							
-					<p><button class="btn btn-info" onclick="cartAdd('<%=product.getProductId()%>','<%=product.getPname()%>')">장바구니 &raquo;</button><input type="text" value="" name="goodsCode" style="display:none;'"/> <a	href="add.jsp" class="btn btn-secondary"> 구매하기 &raquo;</a> <a	href="item.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a></form>
+					<p><button class="btn btn-info" onclick="cartAdd('<%=product.getProductId()%>','<%=product.getPname()%>')" style="background-color:grey ; border-color:grey">장바구니 &raquo;</button><input type="text" value="" name="goodsCode" style="display:none;'"/> <a href="payment.jsp"><button class="btn btn-info" onclick="cartAdd('<%=product.getProductId()%>','<%=product.getPname()%>')"> 구매하기 &raquo;</button></a> <a	href="item.jsp" class="btn btn-secondary">상품 목록 &raquo;</a></form>
 				</div>
 			</div>
 		</div>
 			
 		<br><br>
 					<div id="myCarousel" class="carousel slide" data-ride="carousel" style="float:left; margin-top:-270px;">
-						<ol class="carousel-indicators ad">
-							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-							<li data-target="#myCarousel" data-slide-to="1"></li>
-							<li data-target="#myCarousel" data-slide-to="2"></li>
-						</ol>
 						<div class="carousel-inner ad" style=" width:500px;"> <!-- .carousel-inner > .item > a > img -->
+							
 							<div class="item active">
-								<a href="./product.jsp?id=<%=product.getProductId()%>"><img class="main_item"src="images/item1.jpg" style="height:180px; width:150px; margin-top:40px;" ></a>
+								<img class="main_item"src="images/item1.jpg" style="height:180px; width:150px; margin-top:40px; cursor: pointer;" onclick="location.href='./product.jsp?id=No.1';">
+							</div>
+							
+							<div class="item">
+								<img class="main_item" src="images/item2.jpg" style="height:180px; width:150px; margin-top:40px; cursor: pointer;" onclick="location.href='./product.jsp?id=No.2';">
 							</div>
 							<div class="item">
-								<img class="main_item" src="images/item2.jpg" style="height:180px; width:150px; margin-top:40px;" >
-							</div>
-							<div class="item">
-								<img class="main_item" src="images/item3.jpg" style="height:180px; width:150px; margin-top:40px;" >
+								<img class="main_item" src="images/item3.jpg" style="height:180px; width:150px; margin-top:40px; cursor: pointer;" onclick="location.href='./product.jsp?id=No.3';">
 							</div>
 						</div>
 						<a class="left carousel-control ad" href="#myCarousel" data-slide="prev">
