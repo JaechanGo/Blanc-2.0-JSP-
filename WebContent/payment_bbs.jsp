@@ -38,7 +38,7 @@ a, a:hover{
 		}
 	%>
 	
-	<br><br>
+	<br><br><form action="paymeny_StateUpdate.jsp" method="post">
 			<table class="table table-striped" style='paddin:0px0px0px0px; margin:0px0px0px0px; width:100%; text-align: center; border : 1px solid #dddddd;'>
 				<thead>
 					<tr style="font-size:10px; margin:0px0px0px0px;">
@@ -72,7 +72,13 @@ a, a:hover{
 						<td><%= list.get(i).getItemPhone() %></td>
 						<td><%= list.get(i).getItemMessage() %></td>
 						<td><%= list.get(i).getDate() %></td>
-						<td><%= list.get(i).getState() %></td>																	
+						<td><select id="State" name="State" placeholder="<%= list.get(i).getState() %>">
+						<option value="배송준비">배송준비</option>
+						<option value="배송중">배송중</option>
+						<option value="배송완료">배송완료</option>
+						</select>
+						
+						</td>																	
 					</tr>
 					<% 		
 						}
@@ -80,6 +86,10 @@ a, a:hover{
 
 				</tbody>
 			</table>
+			<div style="text-align: right; margin-right: 20px;">
+			<button type="submit" class="btn btn-info">저장하기 &raquo;</button>
+			</div>
+			</form>
 			<%
 			if(pageNumber != 1){
 			%>
