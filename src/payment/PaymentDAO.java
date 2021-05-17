@@ -70,7 +70,37 @@ public class PaymentDAO {
 		 }
 		 return list;
 	}
-
+	
+	public ArrayList<payment> getMylist(String UserID){//내 게시물
+		 String SQL = "SELECT * FROM payment_cart where userID = ?";
+		 ArrayList<payment> list = new ArrayList<payment>();
+		 try {
+			 PreparedStatement pstmt = conn.prepareStatement(SQL);
+			 pstmt.setString(1, UserID);
+			 rs = pstmt.executeQuery();
+			 while (rs.next()) {
+				 payment Payment = new payment();
+				 Payment.setId(rs.getInt(1));
+				 Payment.setUserID(rs.getString(2));
+				 Payment.setProductID(rs.getString(3));
+				 Payment.setProductQnt(rs.getInt(4));
+				 Payment.setUserEmail(rs.getString(5));
+				 Payment.setUserPhone(rs.getString(6));
+				 Payment.setItemuser_ID(rs.getString(7));
+				 Payment.setItemAdress(rs.getString(8));
+				 Payment.setItemPhone(rs.getString(9));
+				 Payment.setItemMessage(rs.getString(10));
+				 Payment.setDate(rs.getString(11));
+				 Payment.setState(rs.getString(12));
+				 Payment.setPay(rs.getString(13));
+				 list.add(Payment);
+			 }
+		 } catch (Exception e) {
+			 e.printStackTrace();
+		 }
+		 return list;
+	}
+	
 	public boolean nextPage(int pageNumber) {//페이지 넘어갈 경우 처리 (초과시
 		 String SQL = "SELECT * FROM payment_cart WHERE id < ?"; 
 		 try {
