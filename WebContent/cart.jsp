@@ -8,8 +8,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product"%>
 <%@page import="java.sql.*"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
-<%@ page import="cart.*" %>         
+<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />      
 <%@ page import="java.util.*" %>    
 <!-- 금액 단위 컴마 '테그라이브러리' -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -93,22 +92,11 @@
 총 : <fmt:formatNumber value="<%=product.getUnitPrice() * product.getOrderQnt() %>" pattern="#,###"/> 원 (1개 : <fmt:formatNumber value="<%=product.getUnitPrice()%>" pattern="#,###"/>원)<br>	<!--  선택되어진 상품가격 출력 -->
 <%=product.getOrderQnt() %> 개<br>
 
-<p><a href="add.jsp" class="btn btn-secondary"><button class="btn btn-info" style="background-color:#666666; border-color:#666666; margin-left:-10px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;구매하기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            &raquo;</button></a> 
+<p><a href="payment.jsp" class="btn btn-secondary"><button class="btn btn-info" style="background-color:#666666; border-color:#666666; margin-left:-10px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;구매하기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            &raquo;</button></a> 
 <p><a href="cart_list.jsp" ><button class="btn btn-info" style=" margin-left:2px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;장바구니 확인 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &raquo;</button></a><a	href="item.jsp" class="btn btn-secondary"><button class="btn btn-info" style=" margin-left:-5px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 상품 목록 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &raquo;</button></a><input type="text" value="" name="goodsCode" style="display:none;'"/></form>
 			</div>
 				</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
-	
 
 </body>
 	<div class="footer footer_cart">
