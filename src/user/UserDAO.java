@@ -14,7 +14,7 @@ public class UserDAO {
 	
 	public UserDAO() {
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/BBS";
+			String dbURL = "jdbc:mysql://localhost:3306/BLANC";
 			String dbID = "root";
 			String dbPassword = "root";
 			Class.forName("com.mysql.jdbc.Driver");
@@ -76,7 +76,7 @@ public class UserDAO {
 	}
 	
 	public User getUser(int bbsID) { //User user1 = User() // user1.get
-		 String SQL = "SELECT * FROM bbs WHERE bbsID < ? AND bbsAvailable = 1 ORDER BY bbsID DESC LIMIT 10"; 
+		 String SQL = "SELECT * FROM Blance WHERE bbsID < ? AND bbsAvailable = 1 ORDER BY bbsID DESC LIMIT 10"; 
 		 try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 rs = pstmt.executeQuery();
