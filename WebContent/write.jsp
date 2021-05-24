@@ -11,7 +11,7 @@
 <title>JSP 게시판 웹 사이트 </title>
 </head>
 <style>
-.bbs_active{
+.Blance_active{
 	font-weight:bold;
 	font-size:20px;
 	text-decoration: underline;
