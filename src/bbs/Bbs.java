@@ -4,7 +4,7 @@ public class Bbs {
 	private int bbsID;
 	private String bbsTitle;
 	private String userID;
-	private String bbsDate;
+	private String BlanceDate;
 	private String bbsContent;
 	private int bbsAvailable;
 	
@@ -27,10 +27,10 @@ public class Bbs {
 		this.userID = userID;
 	}
 	public String getBbsDate() {
-		return bbsDate;
+		return BlanceDate;
 	}
-	public void setBbsDate(String bbsDate) {
-		this.bbsDate = bbsDate;
+	public void setBbsDate(String BlanceDate) {
+		this.BlanceDate = BlanceDate;
 	}
 	public String getBbsContent() {
 		return bbsContent;
