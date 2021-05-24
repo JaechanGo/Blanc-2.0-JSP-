@@ -42,7 +42,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-center">
 				<li class = "active main_active"><a href="main.jsp">&nbsp;Main&nbsp;</a></li>
-				<li class = "active bbs_active"><a href="bbs.jsp">&nbsp;CONTACT&nbsp;</a></li>
+				<li class = "active Blance_active"><a href="bbs.jsp">&nbsp;CONTACT&nbsp;</a></li>
 				<li class = "active product_active"><a href="item.jsp">&nbsp;SHOP&nbsp;</a></li>
 				<li class = "active visit_active"><a href="visit.jsp">&nbsp;VISIT&nbsp;</a></li>
 			</ul>
