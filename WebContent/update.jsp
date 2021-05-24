@@ -13,7 +13,7 @@
 <title>JSP 게시판 웹 사이트 </title>
 </head>
 <style>
-.bbs_active{
+.Blance_active{
 	font-weight:bold;
 	font-size:20px;
 	text-decoration: underline;
@@ -40,8 +40,8 @@
 			script.println("location.href = 'bbs.jsp'");
 			script.println("</script>");
 		}
-		Bbs bbs = new BbsDAO().getBbs(bbsID);
-		if(!userID.equals(bbs.getUserID())){
+		Bbs Blance = new BbsDAO().getBbs(bbsID);
+		if(!userID.equals(Blance.getUserID())){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('권한이 없습니다.')");
@@ -60,10 +60,10 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" value="<%=bbs.getBbsTitle() %>"></td>
+							<td><input type="text" class="form-control" placeholder="글 제목" name="bbsTitle" maxlength="50" value="<%=Blance.getBbsTitle() %>"></td>
 						</tr>
 						<tr>
-							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height:350px;"><%=bbs.getBbsContent() %></textarea></td>
+							<td><textarea class="form-control" placeholder="글 내용" name="bbsContent" maxlength="2048" style="height:350px;"><%=Blance.getBbsContent() %></textarea></td>
 						</tr>
 					</tbody>
 				</table>
