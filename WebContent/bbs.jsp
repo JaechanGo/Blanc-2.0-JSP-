@@ -20,7 +20,7 @@ a, a:hover{
 	color : #000000;
 	text-decoration;
 }
-.bbs_active{
+.Blance_active{
 	font-weight:bold;
 	font-size:20px;
 	text-decoration: underline;
