@@ -15,7 +15,7 @@ public class BbsDAO {
 	
 	public BbsDAO() {
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/BBS";
+			String dbURL = "jdbc:mysql://localhost:3306/blanc";
 			String dbID = "root";
 			String dbPassword = "root";
 			Class.forName("com.mysql.jdbc.Driver");
@@ -78,14 +78,14 @@ public class BbsDAO {
 			 pstmt.setInt(1, getNext() - (pageNumber - 1)* 10);
 			 rs = pstmt.executeQuery();
 			 while (rs.next()) {
-				 Bbs bbs = new Bbs();
-				 bbs.setBbsID(rs.getInt(1));
-				 bbs.setBbsTitle(rs.getString(2));
-				 bbs.setUserID(rs.getString(3));
-				 bbs.setBbsDate(rs.getString(4));
-				 bbs.setBbsContent(rs.getString(5));
-				 bbs.setBbsAvailable(rs.getInt(6));
-				 list.add(bbs);
+				 Bbs Blance = new Bbs();
+				 Blance.setBbsID(rs.getInt(1));
+				 Blance.setBbsTitle(rs.getString(2));
+				 Blance.setUserID(rs.getString(3));
+				 Blance.setBbsDate(rs.getString(4));
+				 Blance.setBbsContent(rs.getString(5));
+				 Blance.setBbsAvailable(rs.getInt(6));
+				 list.add(Blance);
 			 }
 		 } catch (Exception e) {
 			 e.printStackTrace();
@@ -94,21 +94,21 @@ public class BbsDAO {
 	}
 	
 	public ArrayList<Bbs> getlistMy(String UserID){//내 게시물
-		 String SQL = " SELECT * FROM BBS where userID = ? AND bbsAvailable = 1";
+		 String SQL = " SELECT * FROM bbs where userID = ? AND bbsAvailable = 1";
 		 ArrayList<Bbs> list = new ArrayList<Bbs>();
 		 try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setString(1, UserID);
 			 rs = pstmt.executeQuery();
 			 while (rs.next()) {
-				 Bbs bbs = new Bbs();
-				 bbs.setBbsID(rs.getInt(1));
-				 bbs.setBbsTitle(rs.getString(2));
-				 bbs.setUserID(rs.getString(3));
-				 bbs.setBbsDate(rs.getString(4));
-				 bbs.setBbsContent(rs.getString(5));
-				 bbs.setBbsAvailable(rs.getInt(6));
-				 list.add(bbs);
+				 Bbs Blance = new Bbs();
+				 Blance.setBbsID(rs.getInt(1));
+				 Blance.setBbsTitle(rs.getString(2));
+				 Blance.setUserID(rs.getString(3));
+				 Blance.setBbsDate(rs.getString(4));
+				 Blance.setBbsContent(rs.getString(5));
+				 Blance.setBbsAvailable(rs.getInt(6));
+				 list.add(Blance);
 			 }
 		 } catch (Exception e) {
 			 e.printStackTrace();
@@ -116,7 +116,7 @@ public class BbsDAO {
 		 return list;
 	}
 	public boolean nextPageMy(int pageNumber, String UserID) {//페이지 넘어갈 경우 처리 (초과시
-		 String SQL = "SELECT * FROM BBS WHERE userID = ? AND bbsID < ? AND bbsAvailable = 1"; 
+		 String SQL = "SELECT * FROM bbs WHERE userID = ? AND bbsID < ? AND bbsAvailable = 1"; 
 		 try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setInt(1, getNext()- (pageNumber - 1)* 10);
@@ -131,7 +131,7 @@ public class BbsDAO {
 	}
 	
 	public boolean nextPage(int pageNumber) {//페이지 넘어갈 경우 처리 (초과시
-		 String SQL = "SELECT * FROM BBS WHERE bbsID < ? AND bbsAvailable = 1"; 
+		 String SQL = "SELECT * FROM bbs WHERE bbsID < ? AND bbsAvailable = 1"; 
 		 try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setInt(1, getNext()- (pageNumber - 1)* 10);
@@ -144,20 +144,20 @@ public class BbsDAO {
 		 return false;
 	}
 	public Bbs getBbs(int bbsID) {
-		 String SQL = "SELECT * FROM BBS WHERE bbsID = ?"; 
+		 String SQL = "SELECT * FROM bbs WHERE bbsID = ?"; 
 		 try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setInt(1, bbsID);
 			 rs = pstmt.executeQuery();
 			 if (rs.next()) {
-				 Bbs bbs = new Bbs();
-				 bbs.setBbsID(rs.getInt(1));
-				 bbs.setBbsTitle(rs.getString(2));
-				 bbs.setUserID(rs.getString(3));
-				 bbs.setBbsDate(rs.getString(4));
-				 bbs.setBbsContent(rs.getString(5));
-				 bbs.setBbsAvailable(rs.getInt(6));
-				 return bbs;
+				 Bbs Blance = new Bbs();
+				 Blance.setBbsID(rs.getInt(1));
+				 Blance.setBbsTitle(rs.getString(2));
+				 Blance.setUserID(rs.getString(3));
+				 Blance.setBbsDate(rs.getString(4));
+				 Blance.setBbsContent(rs.getString(5));
+				 Blance.setBbsAvailable(rs.getInt(6));
+				 return Blance;
 			 }
 		 } catch (Exception e) {
 			 e.printStackTrace();
@@ -166,7 +166,7 @@ public class BbsDAO {
 	}
 	
 	public int update(int bbsID, String bbsTitle, String bbsContent) {
-		 String SQL = "UPDATE BBS SET bbsTitle = ? , bbsContent = ? Where bbsID = ? ";
+		 String SQL = "UPDATE bbs SET bbsTitle = ? , bbsContent = ? Where bbsID = ? ";
 		 try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setString(1, bbsTitle);
@@ -181,7 +181,7 @@ public class BbsDAO {
 	}
 	
 	public int delete(int bbsID) {
-		 String SQL = "UPDATE BBS SET bbsAvailable = 0 Where bbsID = ? ";
+		 String SQL = "UPDATE bbs SET bbsAvailable = 0 Where bbsID = ? ";
 		 try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setInt(1, bbsID);
