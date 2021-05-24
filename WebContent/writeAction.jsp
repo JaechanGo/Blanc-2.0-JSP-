@@ -3,9 +3,9 @@
 <%@ page import="bbs.BbsDAO" %>
 <%@ page import="java.io.PrintWriter" %>
 <% request.setCharacterEncoding("UTF-8");%>
-<jsp:useBean id="bbs" class="bbs.Bbs" scope="page"/>
-<jsp:setProperty name="bbs" property="bbsTitle"/>
-<jsp:setProperty name="bbs" property="bbsContent"/>
+<jsp:useBean id="Blance" class="bbs.Bbs" scope="page"/>
+<jsp:setProperty name="Blance" property="bbsTitle"/>
+<jsp:setProperty name="Blance" property="bbsContent"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,15 +27,15 @@
 			script.println("</script>");
 		}	else{
 
-			if (bbs.getBbsTitle()== null || bbs.getBbsContent()==null) {
+			if (Blance.getBbsTitle()== null || Blance.getBbsContent()==null) {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("alert('입력이 안된 사항이 있습니다. ')");
 				script.println("history.back()");
 				script.println("</script>");
 			} else{
-				BbsDAO bbsDAO =new BbsDAO();
-				int result = bbsDAO.write(bbs.getBbsTitle(), userID, bbs.getBbsContent());
+				BbsDAO BlanceDAO =new BbsDAO();
+				int result = BlanceDAO.write(Blance.getBbsTitle(), userID, Blance.getBbsContent());
 				if (result == -1){
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
