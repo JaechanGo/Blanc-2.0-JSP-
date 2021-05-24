@@ -22,13 +22,18 @@ a, a:hover{
 	color : #000000;
 	text-decoration;
 }
-.bbs_active{
+.Blance_active{
 	font-weight:bold;
 	font-size:20px;
 	text-decoration: underline;
 }
 </style>
 </head>
+<script>
+	function message(){		
+		alert('변경되었습니다');	// 어떤것이 전송되는지 출력
+	}
+</script>
 <body>
 
 	<%
@@ -38,7 +43,7 @@ a, a:hover{
 		}
 	%>
 	
-	<br><br><form action="paymeny_StateUpdate.jsp" method="post">
+	<br><br>
 			<table class="table table-striped" style='paddin:0px0px0px0px; margin:0px0px0px0px; width:100%; text-align: center; border : 1px solid #dddddd;'>
 				<thead>
 					<tr style="font-size:10px; margin:0px0px0px0px;">
@@ -87,9 +92,8 @@ a, a:hover{
 				</tbody>
 			</table>
 			<div style="text-align: right; margin-right: 20px;">
-			<button type="submit" class="btn btn-info">저장하기 &raquo;</button>
+			<button class="btn btn-info" onclick="message()">저장하기 &raquo;</button>
 			</div>
-			</form>
 			<%
 			if(pageNumber != 1){
 			%>
