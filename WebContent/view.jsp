@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <title>JSP 게시판 웹 사이트 </title>
 <style>
-.bbs_active{
+.Blance_active{
 	font-weight:bold;
 	font-size:20px;
 	text-decoration: underline;
@@ -35,7 +35,7 @@
 			script.println("</script>");
 		}
 
-		Bbs bbs = new BbsDAO().getBbs(bbsID);
+		Bbs Blance = new BbsDAO().getBbs(bbsID);
 	%>
 	
 	<div class='container'>
@@ -49,25 +49,25 @@
 					<tbody>
 						<tr>
 							<td style="width = 20%;">글 제목</td>
-							<td colspan="2"><%= bbs.getBbsTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt").replaceAll("\n", "<br>") %></td>
+							<td colspan="2"><%= Blance.getBbsTitle().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt").replaceAll("\n", "<br>") %></td>
 						</tr>	
 						<tr>
 							<td>작성자</td>
-							<td colspan="2"><%= bbs.getUserID() %></td>
+							<td colspan="2"><%= Blance.getUserID() %></td>
 						</tr>
 						<tr>
 							<td>작성 일자</td>
-							<td colspan="2"><%= bbs.getBbsDate().substring(0,11)+bbs.getBbsDate().substring(11,13)+"시 "+bbs.getBbsDate().substring(14,16)+"분" %></td>
+							<td colspan="2"><%= Blance.getBbsDate().substring(0,11)+Blance.getBbsDate().substring(11,13)+"시 "+Blance.getBbsDate().substring(14,16)+"분" %></td>
 						</tr>
 						<tr>
 							<td>내용</td>
-							<td colspan="2" style="min-height:200px; text-align : Left;"><%= bbs.getBbsContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt").replaceAll("\n", "<br>") %></td>
+							<td colspan="2" style="min-height:200px; text-align : Left;"><%= Blance.getBbsContent().replaceAll(" ","&nbsp;").replaceAll("<","&lt;").replaceAll(">","&gt").replaceAll("\n", "<br>") %></td>
 						</tr>
 					</tbody>
 				</table>
 				<a href="bbs.jsp" class="btn btn-primary">목록</a>
 				<%
-					if(userID != null && userID.equals(bbs.getUserID())){
+					if(userID != null && userID.equals(Blance.getUserID())){
 				%>
 					<a href="update.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">수정</a>
 					<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction.jsp?bbsID=<%= bbsID %> " class="btn btn-primary">삭제</a>
