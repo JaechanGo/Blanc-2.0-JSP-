@@ -35,16 +35,16 @@
 			script.println("location.href = 'bbs.jsp'");
 			script.println("</script>");
 		}
-		Bbs bbs = new BbsDAO().getBbs(bbsID);
-		if(!userID.equals(bbs.getUserID())){
+		Bbs Blance = new BbsDAO().getBbs(bbsID);
+		if(!userID.equals(Blance.getUserID())){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('권한이 없습니다.')");
 			script.println("location.href = 'bbs.jsp'");
 			script.println("</script>");
 		}else{
-			BbsDAO bbsDAO =new BbsDAO();
-			int result = bbsDAO.delete(bbsID);
+			BbsDAO BlanceDAO =new BbsDAO();
+			int result = BlanceDAO.delete(bbsID);
 			if (result == -1){
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
