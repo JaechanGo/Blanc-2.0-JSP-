@@ -126,7 +126,7 @@ p {
 					<img class="main_item" src="images/local_img/seoul_02.jpeg">
 				</div>
 				<div class="item">
-					<img class="main_item" src="images/item3.jpg">
+					<img class="main_item" src="images/local_img/seoul_03.jpeg">
 				</div>
 			</div>
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -204,7 +204,7 @@ p {
 					<img class="main_item" src="images/local_img/hannam_02.jpeg">
 				</div>
 				<div class="item">
-					<img class="main_item" src="images/item3.jpg">
+					<img class="main_item" src="images/local_img/hannam_03.jpeg">
 				</div>
 			</div>
 			<a class="left carousel-control" href="#hannam_img" data-slide="prev">
@@ -276,10 +276,10 @@ p {
 					<img class="main_item" src="images/local_img/sangji_01.jpeg" >
 				</div>
 				<div class="item">
-					<img class="main_item" src="images/item2.jpg">
+					<img class="main_item" src="images/local_img/sangji_02.jpeg">
 				</div>
 				<div class="item">
-					<img class="main_item" src="images/item3.jpg">
+					<img class="main_item" src="images/local_img/sangji_03.jpeg">
 				</div>
 			</div>
 			<a class="left carousel-control" href="#sangji_img" data-slide="prev">
