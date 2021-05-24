@@ -16,7 +16,7 @@ public class PaymentDAO {
 	
 	public PaymentDAO() {
 		try {
-			String dbURL = "jdbc:mysql://localhost:3306/BBS";
+			String dbURL = "jdbc:mysql://localhost:3306/BLANC";
 			String dbID = "root";
 			String dbPassword = "root";
 			Class.forName("com.mysql.jdbc.Driver");
