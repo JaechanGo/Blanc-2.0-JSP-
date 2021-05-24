@@ -20,7 +20,7 @@ a, a:hover{
 	color : #000000;
 	text-decoration;
 }
-.bbs_active{
+.Blance_active{
 font-weight:bold;
 font-size:20px;
 text-decoration: underline;
@@ -43,8 +43,8 @@ text-decoration: underline;
 				</thead>
 				<tbody>
 					<%
-						BbsDAO bbsDAO = new BbsDAO();
-						ArrayList<Bbs> list = bbsDAO.getlistMy(userID);
+						BbsDAO BlanceDAO = new BbsDAO();
+						ArrayList<Bbs> list = BlanceDAO.getlistMy(userID);
 						for (int i = 0; i < list.size();i++){
 					%>
 					<tr>
