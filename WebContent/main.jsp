@@ -45,30 +45,79 @@
 					<a class = "btn btn-primary btn-pull" href="item.jsp" role="button" style="margin-top:20px; color: #fff;"> 상품 보기</a></p>
 			</div>
 		</div>
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		
+				<div id="mylocal" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators" >
+				<li data-target="#mylocal" data-slide-to="0"></li>
+				<li data-target="#mylocal" data-slide-to="1"></li>
+				<li data-target="#mylocal" data-slide-to="2"></li>
+				<li data-target="#mylocal" data-slide-to="3"></li>
+				<li data-target="#mylocal" data-slide-to="4"></li>
+				<li data-target="#mylocal" data-slide-to="5"></li>
+				<li data-target="#mylocal" data-slide-to="6"></li>
+				<li data-target="#mylocal" data-slide-to="7" class="active"></li>
+				<li data-target="#mylocal" data-slide-to="8"></li>
+			</ol>
+			<div class="carousel-inner"> <!-- .carousel-inner > .item > a > img -->
+				<div class="item" style="background-color: #fff;">
+					<img class="main_item" src="images/local_img/sangji_01.jpeg" >
+				</div>
+				<div class="item">
+					<img class="main_item" src="images/local_img/sangji_02.jpeg">
+				</div>
+				<div class="item">
+					<img class="main_item" src="images/local_img/sangji_03.jpeg">
+				</div>
+				<div class="item">
+					<img class="main_item" src="images/local_img/hannam_01.jpeg">
+				</div>
+				<div class="item">
+					<img class="main_item" src="images/local_img/hannam_02.jpeg">
+				</div>
+				<div class="item">
+					<img class="main_item" src="images/local_img/hannam_03.jpeg">
+				</div>
+				<div class="item active">
+					<img class="main_item" src="images/local_img/seoul_01.jpeg">
+				</div>
+				<div class="item">
+					<img class="main_item" src="images/local_img/seoul_02.jpeg">
+				</div>
+				<div class="item">
+					<img class="main_item" src="images/local_img/seoul_03.jpeg">
+				</div>
+			</div>		
+		</div>
+		<div style="margin:30px 0px 30px 0px;">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
 			</ol>
-			<div class="carousel-inner"> <!-- .carousel-inner > .item > a > img -->
+			<div class="carousel-inner">
+				<!-- .carousel-inner > .item > a > img -->
 				<div class="item active" style="background-color: #fff;">
-					<a href="product.jsp?id=No.1"><img class="main_item" src="images/item1.jpg" ></a>
+					<a href="product.jsp?id=No.1"><img class="main_item"
+						src="images/item1.jpg"></a>
 				</div>
 				<div class="item">
-					<a href="product.jsp?id=No.2"><img class="main_item" src="images/item2.jpg"></a>
+					<a href="product.jsp?id=No.2"><img class="main_item"
+						src="images/item2.jpg"></a>
 				</div>
 				<div class="item">
-					<a href="product.jsp?id=No.3"><img class="main_item" src="images/item3.jpg"></a>
+					<a href="product.jsp?id=No.3"><img class="main_item"
+						src="images/item3.jpg"></a>
 				</div>
 			</div>
 			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a> <a class="right carousel-control" href="#myCarousel"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right"></span>
 			</a>
-			<a class="right carousel-control" href="#myCarousel" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			</a>			
 		</div>
+	</div>
 	<div class="footer">
 	<%@ include file="footer.jsp"%>
 	</div>
