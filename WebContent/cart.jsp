@@ -97,7 +97,7 @@
 			</div>
 				</div>
 		</div>
-
+</div>
 </body>
 	<div class="footer footer_cart">
 	<%@ include file="footer.jsp"%>
