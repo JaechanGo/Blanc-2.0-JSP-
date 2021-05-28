@@ -1,4 +1,4 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="bbs.BbsDAO" %>
@@ -6,8 +6,9 @@
 <%@ page import="user.UserDAO" %>
 <%@ page import="user.User" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="dto.Product"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
+<%@ page import="product.Product"%>
+<%@ page import="product.ProductDAO"%>
+<jsp:useBean id="productDAO" class="product.ProductDAO" scope="session" />
 <!-- 금액 단위 컴마 '테그라이브러리' -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
