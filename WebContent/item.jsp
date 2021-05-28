@@ -6,8 +6,8 @@
 <%@ page import="user.UserDAO" %>
 <%@ page import="user.User" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="dto.Product"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
+<%@ page import="product.Product"%>
+<jsp:useBean id="productDAO" class="product.ProductDAO" scope="session" />
 <!DOCTYPE html>
 <html>
 <head>
