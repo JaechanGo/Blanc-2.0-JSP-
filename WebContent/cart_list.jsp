@@ -7,8 +7,8 @@
 <%@ page import="user.User" %>
 <%@page import="java.sql.*"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="dto.Product"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />       
+<%@ page import="product.Product"%>
+<jsp:useBean id="productDAO" class="product.ProductDAO" scope="session" />       
 <%@ page import="java.util.*" %>    
 <!-- 금액 단위 컴마 '테그라이브러리' -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
