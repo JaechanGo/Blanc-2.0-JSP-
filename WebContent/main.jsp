@@ -88,7 +88,9 @@
 				</div>
 			</div>		
 		</div>
-		<div style="margin:30px 0px 30px 0px;">
+	
+<!-- 상품 이미지 -->
+<!-- 		<div style="margin:30px 0px 30px 0px;">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -96,7 +98,7 @@
 				<li data-target="#myCarousel" data-slide-to="2"></li>
 			</ol>
 			<div class="carousel-inner">
-				<!-- .carousel-inner > .item > a > img -->
+				.carousel-inner > .item > a > img
 				<div class="item active" style="background-color: #fff;">
 					<a href="product.jsp?id=No.1"><img class="main_item"
 						src="images/item1.jpg"></a>
@@ -117,7 +119,7 @@
 				class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 		</div>
-	</div>
+	</div> -->
 	<div class="footer">
 	<%@ include file="footer.jsp"%>
 	</div>
