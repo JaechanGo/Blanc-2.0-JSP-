@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/needpopup.css">
-<script src="js/location_cart.js"></script>
+<script src="js/Address_location.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <title>cart list</title>
