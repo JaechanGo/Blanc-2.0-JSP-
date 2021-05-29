@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<title>Full Background Cover</title>
+<meta charset="UTF-8">
+<style>
+@media only screen and (orientation: landscape) {
+body, html { 
+    margin: 0;
+    padding: 0;
+    height: 520px;
+    background-color:black;
+}
+.bgimg {
+    border: 0;
+    padding: 0; 
+    background-image: url(images/Popup.png);
+    min-height: 100%;
+
+    background-size: cover;
+    width: 520px;
+}
+.popcolor{
+    color:white;
+    white-space:pre-wrap;
+}
+}
+@media only screen and (orientation: portrait) {
+    body, html { 
+    margin: 0;
+    padding: 0;
+    height: 99%;
+    width: 100%;
+    background-color:black;
+}
+.bgimg {
+    border: 0;
+    padding: 0; 
+    background-image: url(images/Popup.png);
+    min-height: 98%;
+
+    background-size: cover;
+    width: 100%;
+}
+.popcolor{
+    color:white;
+    white-space:pre-wrap;
+}
+}
+</style>
+<body onresize="parent.resizeTo(520,630)" onload="parent.resizeTo(520,620)">
+<script language="JavaScript">
+
+    function notice_setCookie( name, value, expiredays )
+        {
+            var todayDate = new Date();
+            todayDate.setDate( todayDate.getDate() + expiredays );
+            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+            }
+    
+    
+    function notice_closeWin() 
+    { 
+            if ( document.forms[0].Notice.checked ) 
+                    notice_setCookie( "Notice", "done" , 1); // 1=하룻동안 공지창 열지 않음
+            self.close(); 
+    }
+    function na_call(str){  eval(str);}
+    </script>
+<body>
+<div class="bgimg"></div>
+<form name="form1">
+ <div class="popcolor" style="margin-left:5px;">10초후에 자동으로 종료됩니다.    하루동안 보지않기<input type="checkbox" name="Notice"  OnClick="notice_closeWin()"></div>
+</form>
+
+</body>
+</html>
