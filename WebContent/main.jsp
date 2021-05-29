@@ -25,7 +25,15 @@
 </style>
 <title>BLANC. </title>
 </head>
-<body>
+    <script>
+        function popup(){
+            var url = "pop.html";
+            var name = "popup test";
+            var option = " top = 0px, right = 0, location = no, scrollbars=no, resizable=no"
+            window.open(url, name, option);
+        }
+    </script>
+<body onload="popup()">
 	<%@ include file="menu.jsp"%>
 		<div class="jumbotron">
 			<div class="container">
@@ -88,7 +96,7 @@
 				</div>
 			</div>		
 		</div>
-	
+	<br><br><br>
 <!-- 상품 이미지 -->
 <!-- 		<div style="margin:30px 0px 30px 0px;">
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
