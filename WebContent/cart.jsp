@@ -58,7 +58,7 @@
 %>    
 <html>
 <head>
-<title>cart add</title>
+<title>BLANC. 장바구니</title>
 </head>
 <style>
 .product_active{
@@ -98,8 +98,9 @@
 				</div>
 		</div>
 </div>
-</body>
-	<div class="footer footer_cart">
+	<div class="footer">
 	<%@ include file="footer.jsp"%>
 	</div>
+</body>
+
 </html>

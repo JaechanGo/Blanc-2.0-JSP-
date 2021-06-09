@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Full Background Cover</title>
+<title>BLANC. AD</title>
 <meta charset="UTF-8">
 <style>
 @media only screen and (orientation: landscape) {
@@ -48,29 +48,25 @@ body, html {
 }
 </style>
 <body onresize="parent.resizeTo(520,630)" onload="parent.resizeTo(520,620)">
+<meta charset="EUC-KR">
+<title>Insert title here</title>
 <script language="JavaScript">
-
-    function notice_setCookie( name, value, expiredays )
-        {
-            var todayDate = new Date();
-            todayDate.setDate( todayDate.getDate() + expiredays );
-            document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
-            }
-    
-    
-    function notice_closeWin() 
-    { 
-            if ( document.forms[0].Notice.checked ) 
-                    notice_setCookie( "Notice", "done" , 1); // 1=하룻동안 공지창 열지 않음
-            self.close(); 
+    function setCookie(name, value, expiredays) {
+        var date = new Date();
+        date.setDate(date.getDate() + expiredays);
+        document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
     }
-    function na_call(str){  eval(str);}
-    </script>
+
+    function closePopup() {
+        if (document.getElementById("check").value) {
+            setCookie("popupYN", "N", 1);
+            self.close();
+        }
+    }
+</script>
 <body>
 <div class="bgimg"></div>
-<form name="form1">
- <div class="popcolor" style="margin-left:5px;">10초후에 자동으로 종료됩니다.    하루동안 보지않기<input type="checkbox" name="Notice"  OnClick="notice_closeWin()"></div>
-</form>
+ <div class="popcolor" style="margin-left:5px;">10초후에 자동으로 종료됩니다.    하루동안 보지않기<input type="checkbox" name="Notice" onclick="closePopup();"></div>
 
 </body>
 </html>

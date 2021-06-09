@@ -44,14 +44,13 @@ public class UserDAO {
 	}
 	
 	public int join(User user) {
-		String SQL = "Insert into USER VALUES (?,?,?,?,?)";
+		String SQL = "Insert into USER VALUES (?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getUserID());
 			pstmt.setString(2, user.getUserPassword());
 			pstmt.setString(3, user.getUserName());
-			pstmt.setString(4, user.getUserGender());
-			pstmt.setString(5, user.getUserEmail());
+			pstmt.setString(4, user.getUserEmail());
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -60,14 +59,13 @@ public class UserDAO {
 	}
 	
 	public int User(User user) {
-		String SQL = "SELECT * FROM User (?,?,?,?,?)";
+		String SQL = "SELECT * FROM User (?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getUserID());
 			pstmt.setString(2, user.getUserPassword());
 			pstmt.setString(3, user.getUserName());
-			pstmt.setString(4, user.getUserGender());
-			pstmt.setString(5, user.getUserEmail());
+			pstmt.setString(4, user.getUserEmail());
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -85,8 +83,7 @@ public class UserDAO {
 				 user.setUserID(rs.getString(1));
 				 user.setUserPassword(rs.getString(2));
 				 user.setUserName(rs.getString(3));
-				 user.setUserGender(rs.getString(4));
-				 user.setUserEmail(rs.getString(5));
+				 user.setUserEmail(rs.getString(4));
 				 return user;
 			 }
 		 } catch (Exception e) {
@@ -106,8 +103,7 @@ public class UserDAO {
 				 user.setUserID(rs.getString(1));
 				 user.setUserPassword(rs.getString(2));
 				 user.setUserName(rs.getString(3));
-				 user.setUserGender(rs.getString(4));
-				 user.setUserEmail(rs.getString(5));
+				 user.setUserEmail(rs.getString(4));
 				 return user;
 			 }
 		 } catch (Exception e) {

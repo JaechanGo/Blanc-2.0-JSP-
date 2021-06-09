@@ -55,7 +55,7 @@ p {
 
         
 
-<title>BLANC. </title>
+<title>BLANC. 브랜딩 위치</title>
 </head>
 <body>
 	<%@ include file="menu.jsp"%>

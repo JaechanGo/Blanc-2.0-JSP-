@@ -25,7 +25,7 @@
 <script src="js/Address_location.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<title>cart list</title>
+<title>BLANC. 결제화면</title>
 
 </head>
 <style>
@@ -343,6 +343,9 @@ p {
 	<a href="item.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
 	</div>
 	<br>
+		<div class="footer">
+	<%@ include file="footer.jsp"%>
+	</div>
 </body>
-<%@ include file="footer.jsp"%>
+
 </html>

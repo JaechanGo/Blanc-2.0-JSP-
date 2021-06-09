@@ -41,7 +41,7 @@
       		<div class="left_area">
 					<br><br><img src="<%=product.getImage()%>" class="itemimg">
 			</div>	
-			<div class="right_area">
+			<div class="right_area" style="width:100%;">
 			<%=product.getProductId()%><br>
 			Name		: <%=product.getPname()%><br>
 			Notice		: <%=product.getNotice()%><br>

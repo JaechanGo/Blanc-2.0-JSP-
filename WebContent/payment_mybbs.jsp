@@ -16,7 +16,7 @@
 <meta name='viewport' content="width=device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/custom.css">
-<title>BLANC. </title>
+<title>BLANC. 배송관리</title>
 <style type = "text/css">
 a, a:hover{
 	color : #000000;

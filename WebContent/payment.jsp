@@ -25,7 +25,7 @@
 <script src="js/Address_location.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<title>cart list</title>
+<title>BLANC. 결제화면</title>
 
 </head>
 <style>
@@ -510,7 +510,7 @@ p {
 						핸드폰 결제 <a style="color: red;">*</a>
 					</div>
 					<div class='layer4'>
-						PAYCO <a style="color: red;">*</a>
+						결제 종류 <a style="color: red;">*</a>
 					</div>
 				</td>
 				<td>
@@ -556,7 +556,7 @@ p {
 							placeholder="5678" onkeypress="onlyNumber();">
 					</div>
 					<div class='layer4'>
-						페이 결제 <select id="pay_pay">
+						 <select id="pay_pay">
 							<option value="">선택</option>
 							<option value="hana">카카오페이</option>
 							<option value="shinhan">삼성페이</option>
