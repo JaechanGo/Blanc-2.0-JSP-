@@ -65,12 +65,12 @@
 						</tr>
 					</tbody>
 				</table>
-				<a href="bbs.jsp" class="btn btn-primary">목록</a>
+				<a href="bbs.jsp" class="btn btn-primary" style="color:#fff">목록</a>
 				<%
 					if(userID != null && userID.equals(Blance.getUserID())){
 				%>
-					<a href="update.jsp?bbsID=<%= bbsID %>" class="btn btn-primary">수정</a>
-					<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction.jsp?bbsID=<%= bbsID %> " class="btn btn-primary">삭제</a>
+					<a href="update.jsp?bbsID=<%= bbsID %>" class="btn btn-primary" style="color:#fff">수정</a>
+					<a onclick="return confirm('정말로 삭제하시겠습니까?')" href="deleteAction.jsp?bbsID=<%= bbsID %> " class="btn btn-primary" style="color:#fff">삭제</a>
 				<%
 					}
 				%>
