@@ -193,7 +193,7 @@ p {
 		// JDBC 참조 변수 준비
 		Connection con = null; 
 		PreparedStatement pstmt = null; 
-		String url = "jdbc:mysql://localhost:3306/BLANC";
+		String url = "jdbc:mysql://localhost:3306/BLANC?useUnicode=true&characterEncoding=utf8";
 		String user = "root", pw = "root";
 
 		// 1) JDBC 드라이버 로딩
