@@ -30,7 +30,7 @@
   }
   .shop{width:100%;}
   .shop>div{padding: 10px;}
-  .left_area{width: 100%; margin: 0; padding: 0; margin-left: 15vw;}
+  .left_area{width: 100%; margin: 0; padding: 0;}
   .right_area{width:100%;white-space: pre-wrap; top:10%;height: 18vw; font-size: 17px;}
   .shop_pr01{ }
   .shop_pr02{clear: both; border-top: 1px solid;}
