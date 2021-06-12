@@ -25,7 +25,7 @@ public class UserDAO {
 	}
 	
 	public int login(String userID, String userPassword) {
-		String SQL = "SELECT userPassword FROM USER WHERE userID = ?";
+		String SQL = "SELECT userPassword FROM user WHERE userID = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);
@@ -44,7 +44,7 @@ public class UserDAO {
 	}
 	
 	public int join(User user) {
-		String SQL = "Insert into USER VALUES (?,?,?,?)";
+		String SQL = "Insert into user VALUES (?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getUserID());
@@ -59,7 +59,7 @@ public class UserDAO {
 	}
 	
 	public int User(User user) {
-		String SQL = "SELECT * FROM User (?,?,?,?)";
+		String SQL = "SELECT * FROM user (?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, user.getUserID());
@@ -74,7 +74,7 @@ public class UserDAO {
 	}
 	
 	public User getUser(int bbsID) { //User user1 = User() // user1.get
-		 String SQL = "SELECT * FROM Blance WHERE bbsID < ? AND bbsAvailable = 1 ORDER BY bbsID DESC LIMIT 10"; 
+		 String SQL = "SELECT * FROM bbs WHERE bbsID < ? AND bbsAvailable = 1 ORDER BY bbsID DESC LIMIT 10"; 
 		 try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 rs = pstmt.executeQuery();
@@ -93,7 +93,7 @@ public class UserDAO {
 	}
 	
 	public User getUserDATA(String USERID) { //User user1 = User() // user1.get
-		 String SQL = "SELECT * FROM User where UserID= ? "; 
+		 String SQL = "SELECT * FROM user where UserID= ? "; 
 		 try {
 			 PreparedStatement pstmt = conn.prepareStatement(SQL);
 			 pstmt.setString(1, USERID);
