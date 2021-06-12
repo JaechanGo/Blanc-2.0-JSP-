@@ -70,15 +70,15 @@ a, a:hover{
 			<%
 			if(pageNumber != 1){
 			%>
-				<a href = "bbs.jsp?pageNumber=<%=pageNumber -1%>" class="btn btn-success btn-arraw-left">이전</a>
+				<a href = "bbs.jsp?pageNumber=<%=pageNumber -1%>" class="btn btn-success btn-arraw-left" style="color:#fff">이전</a>
 			<%
 				}if(bbsDAO.nextPage(pageNumber+1)){	
 			%>
-			<a href = "bbs.jsp?pageNumber=<%=pageNumber +1%>" class="btn btn-success btn-arraw-left">다음</a>
+			<a href = "bbs.jsp?pageNumber=<%=pageNumber +1%>" class="btn btn-success btn-arraw-left" style="font-color:#fff">다음</a>
 			<%
 				}
 			%>
-			<a href = "write.jsp" class='btn btn-primary pull-right'>글쓰기</a>
+			<a href = "write.jsp" class='btn btn-primary pull-right' style="color:#fff">글쓰기</a>
 		</div>
 	</div>
 	
